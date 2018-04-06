@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ProductCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Product id="2" number="124" title="Bass" price="760" />
+  <Product id="0" number="123" title="Guitar" price="1000" />
+  <Product id="0" number="34" title="Drum" price="2500" />
+  <Product id="0" number="76" title="Microphone" price="260" />
+  <Product id="0" number="77" title="Cord" price="19.99" />
+</ProductCollection>

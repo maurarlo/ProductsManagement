@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ProductsManagement.Entities.Product>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".dialog").on("click", function (e) {
+            var url = "@Url.Action("AddProduct", "Home")";
+            $("#dialog-session").dialog({
+                title: 'New Product',
+                autoOpen: false,
+                resizable: false,
+                height: 250,
+                width: 250,
+                show: { effect: 'drop', direction: "up" },
+                modal: true,
+                draggable: true,
+                open: function (event, ui) {
+                    $(this).load(url);
+                },
+                close: function (event, ui) {
+                    $(this).dialog('close');
+                }
+            });
+            $("#dialog-session").dialog('open');
+            return false;
+        });
+    });
+</script>
+
+<div class="container">
+    <h2>Products</h2>
+    <div class="modal-body" id="form-container">
+        <input type="button" value="Add" class="dialog" />
+    </div>
+    <div id="dialog-session" style="display: none">
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Title</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Title)
+                        </td>
+                        <td>
+                            @item.Price.ToString("C2")
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ProductCollection>
+  <Product id="1" number="123" title="Guitar" price="800"></Product>
+  <Product id="2" number="124" title="Bass" price="760"></Product>
+</ProductCollection>
